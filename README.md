@@ -1,26 +1,19 @@
 # Instalação do Ubuntu
 
-O código abaixo irá instalar: Git 2, NodeJS 6, Docker, Docker Compose e o Laradock na versão 5.5
-
 ```bash
+sudo apt-get update -y && \
+sudo apt-get upgrade -y && \
+sudo apt-get dist-upgrade -y && \
+sudo apt-get autoremove -y && \
 sudo add-apt-repository ppa:git-core/ppa -y && \
 sudo apt-get update && \
 sudo apt-get install git -y && \
 git --version && \
+sudo apt-get install -y curl vim htop && \
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash - && \
-sudo apt-get install nodejs -y && \
-sudo apt-get install build-essential -y && \
+sudo apt-get install -y nodejs build-essential npm && \
 node --version && \
-sudo apt-get update && \
-sudo apt-get install -y \
-    linux-image-extra-$(uname -r) \
-    linux-image-extra-virtual && \
-sudo apt-get update && \
-sudo apt-get install -y \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    software-properties-common && \
+npm --version && \
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && \
 sudo add-apt-repository -y \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
@@ -33,20 +26,20 @@ sudo docker run hello-world && \
 sudo curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose && \
 sudo chmod +x /usr/local/bin/docker-compose && \
 sudo docker-compose --version && \
-mkdir -p ~/Documents/projects && \
-cd ~/Documents/projects && \
-rm -rf laradock && \
-git clone https://github.com/Laradock/laradock.git && \
-cd laradock && \
-git checkout tags/v5.5.0 && \
-git status && \
-cp env-example .env
-```
-
-Agora precisamos edicar o arquivo `.env` e selecionar a versão do PHP.
-
-Depois podemos executar o `docker-compose`
+sudo groupadd docker && \
+sudo usermod -aG docker $USER && \
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90 && \
+echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list && \
+sudo apt-get update && \
+sudo apt-get install -y spotify-client && \
+sudo apt-get install -y mysql-workbench && \
+sudo apt-get install -y mysql-server && \
+sudo apt-get install -y php7.2 php7.2-cli php7.2-fpm php7.2-xml php7.2-common php7.2-curl php7.2-mysql php7.2-zip
 
 ```
-sudo docker-compose up -d nginx mysql mongo
-```
+
+vscode
+gitkraken
+stride
+slack
+skype
