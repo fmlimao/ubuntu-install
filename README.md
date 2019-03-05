@@ -1,6 +1,6 @@
 # Instalação do Ubuntu
 
-O código abaixo irá instalar: Git 2, NodeJS 6, Docker, Docker Compose e o Laradock na versão 5.5
+O código abaixo irá instalar `Git 2`, `NodeJS 10`, `Docker` e `Docker Compose`
 
 
 ## Iniciando com comando root
